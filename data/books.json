@@ -1,0 +1,18 @@
+[
+  {
+    "id": "story-sample",
+    "title": "아기 돼지 삼형제",
+    "author": "전래동화",
+    "coverUrl": "https://images.unsplash.com/photo-1633469924738-52101af51d87?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVnb3xlbnwwfHwwfHx8MA%3D%3D",
+    "pageCount": 2,
+    "createdAt": "2025-12-15T15:23:06.607Z"
+  },
+  {
+    "id": "story-1765812019826",
+    "title": " 빨간모자",
+    "author": "김길중",
+    "coverUrl": "https://i.ibb.co/YTbX2K51/10-2.png",
+    "pageCount": 2,
+    "createdAt": "2025-12-15T15:20:19.826Z"
+  }
+]
