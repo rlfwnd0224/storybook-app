@@ -19,6 +19,31 @@ export default function Reader({ story }: ReaderProps) {
     const rightPage = story.pages[currentIndex + 1];
     // currentIndex is 0, 2, 4...
 
+    const synthRef = useRef<SpeechSynthesis | null>(null);
+    const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+    // Initialize Speech Synthesis
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            synthRef.current = window.speechSynthesis;
+        }
+        return () => {
+            if (synthRef.current) {
+                synthRef.current.cancel();
+            }
+        };
+    }, []);
+
+    // Handle Page Change or Play Toggle
+    useEffect(() => {
+        if (!synthRef.current) return;
+
+        // Stop any ongoing speech when page changes
+        synthRef.current.cancel();
+        setIsPlaying(false);
+
+    }, [currentIndex]);
+
     // Navigation logic for spread
     const nextPage = () => {
         if (currentIndex < totalPages - 2) {
